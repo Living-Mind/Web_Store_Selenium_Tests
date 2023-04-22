@@ -1,11 +1,12 @@
 from PageObjects.HomePage import HomePage
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+#from selenium.webdriver.common.keys import Keys
 import time
 import pytest
 
 
-def test_pet_categories_redirects():
+def test_fish_left_category_redirect():
+
     home_page = HomePage()
     home_page.homepage_url()
     home_page.goto_category("/html/body/div[2]/div[2]/div[1]/div/a[1]")
@@ -15,4 +16,4 @@ def test_pet_categories_redirects():
     home_page.driver.quit()
 
 
-test_pet_categories_redirects()
+test_fish_left_category_redirect()
