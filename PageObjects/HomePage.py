@@ -1,11 +1,14 @@
-from selenium import webdriver
+from seleniumpagefactory.Pagefactory import PageFactory
 
-class HomePage:
-    def __init__(self):
-        self.driver = webdriver.Firefox()
 
-    def homepage_url(self):
-        self.driver.get("https://petstore.octoperf.com/actions/Catalog.action") 
+class HomePage(PageFactory):
+    def __init__(self, driver):
+        self.driver = driver
 
-    def goto_category(self, xpath):
-        self.driver.find_element("xpath", xpath).click()
+    locators = {
+        "sign_in": ("CSS", "#MenuContent > a:nth-child(3)"),
+        "username": ("ID", "WelcomeContent")
+    }
+
+    def click_sign_in(self):
+        self.sign_in.click()
