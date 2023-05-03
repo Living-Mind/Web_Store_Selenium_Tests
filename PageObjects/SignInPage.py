@@ -7,7 +7,8 @@ class SignInPage(PageFactory):
     locators = {
         "username_input": ("NAME", "username"),
         "password_input": ("NAME", "password"),
-        "login_button": ("CSS", "#Catalog > form:nth-child(1) > input:nth-child(3)")
+        "login_button": ("CSS", "#Catalog > form:nth-child(1) > input:nth-child(3)"),
+        "register_button": ("CSS", "#Catalog > a:nth-child(2)")
     }
 
     def enter_username(self):
@@ -21,3 +22,6 @@ class SignInPage(PageFactory):
 
     def clear_field(self):
         self.password_input.clear()
+
+    def click_register(self):
+        self.register_button.click()
