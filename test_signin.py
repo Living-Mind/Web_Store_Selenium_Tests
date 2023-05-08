@@ -1,5 +1,6 @@
 from selenium import webdriver
 from PageObjects.HomePage import HomePage
+from time import sleep
 
 def test_singin():
     driver = webdriver.Firefox()
@@ -9,4 +10,5 @@ def test_singin():
     homepage = HomePage(driver)
 
     homepage.click_sign_in()
+    sleep(5)
     driver.quit()
